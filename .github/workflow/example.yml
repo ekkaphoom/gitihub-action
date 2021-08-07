@@ -1,0 +1,15 @@
+# Triggers the workflow on push or pull request events
+on: [push]
+env:
+  SERVER: production
+name: Deploy Extension
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: npm -v
+      - run: echo $SERVER
