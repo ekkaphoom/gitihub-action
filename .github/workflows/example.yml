@@ -20,3 +20,9 @@ jobs:
           who-to-greet: "John Doe"
       - name: Log Greeting Time
         run: echo "${{ steps.greeting.outputs.time }}"
+      - name: print environment variables
+        run: |
+          echo "GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}"
+          echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
+          echo "GITHUB_SHA: ${GITHUB_SHA}"
+          echo "RUNNER_OS: ${RUNNER_OS}"
