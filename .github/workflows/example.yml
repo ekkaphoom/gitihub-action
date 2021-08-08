@@ -13,6 +13,10 @@ jobs:
           node-version: 12
       - run: npm -v
       - run: echo $SERVER
-      - uses: actions/hello-world-javascript-action@main
+      - id: greeting
+        name: hello world javascript action step
+        uses: actions/hello-world-javascript-action@main
         with:
           who-to-greet: "John Doe"
+      - name: Log Greeting Time
+        run: echo "${{ steps.greeting.outputs.time }}"
